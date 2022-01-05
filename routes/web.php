@@ -25,6 +25,7 @@ Route::post('/updatecategory', [CategoryController::class, 'updatecategory']);
 Route::get('/deletecategory/{id}', [CategoryController::class, 'deletecategory'])->name('deletecategory');
 
 
+
 Route::get('/categories', [CategoryController::class, 'categories'])->name('categories');
 
 Route::get('/addslider', [SliderController::class, 'addslider'])->name('addslider');
@@ -46,6 +47,8 @@ Route::post('/updateproduct', [ProductController::class, 'updateproduct'])->name
 Route::get('/deleteproduct/{id}', [ProductController::class, 'deleteproduct'])->name('deleteproduct');
 Route::get('/activateproduct/{id}', [ProductController::class, 'activateproduct'])->name('activateproduct');
 Route::get('/deactivateproduct/{id}', [ProductController::class, 'deactivateproduct'])->name('deactivateproduct');
+Route::get('/products-by-category/{category_name}', [ProductController::class, 'view_product_by_category'])->name('view_product_by_category');
+
 
 
 

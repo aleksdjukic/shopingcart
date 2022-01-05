@@ -128,4 +128,11 @@ class ProductController extends Controller
 
         return redirect('/products')->with('status', ('The Product has been successfully deactivated'));
     }
+    public function view_product_by_category($category_name){
+
+        $products = Product::all()->where('product_category', $category_name)->where('status', '1');
+        $categories = Category::all();
+        return view('client.shop')->with('products', $products)->with('categories', $categories);
+
+    }
 }
